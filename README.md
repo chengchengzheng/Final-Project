@@ -1,4 +1,5 @@
-![ChatGPT Image 2025年5月31日 12_47_05](https://github.com/user-attachments/assets/fcc1dec2-6dfa-4d9e-926e-dbc4075a2dd5)# Final-Project
+
+# Final-Project
 ## Inland Water Body Detection with ML
 ### Normandy(flooded) vs Awbari(dray)
 ![S2B_MSIL2A_20250429T104619_N0511_R051_T31UET_20250429T130440-ql](https://github.com/user-attachments/assets/5c59e03f-83dd-4e65-a46a-10b090cfcc4f)
@@ -26,6 +27,7 @@ A hyper-arid inland area near the town of Awbari in the Libyan Sahara. This regi
 -This project uses open-access Sentinel-2 data to compare the performance of NDWI, MNDWI, and K-means clustering for detecting water bodies in both flooded and dry regions. By testing different band combinations and algorithm outputs, it evaluates the accuracy and adaptability of each method under varying environmental conditions.
 
 Additionally, the project uses the CodeCarbon tool to estimate emissions from computation, highlighting the environmental efficiency of the approach.
+
 ## Background
 
 Inland water bodies, such as lakes, rivers, and reservoirs, are vital to ecosystems, agriculture, and human livelihoods. However, they are increasingly impacted by climate change and human activities, making accurate and timely monitoring essential (Zeng et al., 2023).
@@ -50,9 +52,11 @@ By combining visual interpretation with quantitative evaluation, the project pro
 
 Sentinel-2 data have a positive impact on land cover/use monitoring, especially in terms of crops, forests, urban areas and water resources. When combined with other remote sensing data, the accuracy rate is very high. 80%(Phiri et al., 2020).
 
-![Uploading ChatGPT Image<?xml version="1.0" encoding="utf-8"?><Error><Code>AuthenticationFailed</Code><Message>Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
-RequestId:60a40ac0-f01e-0043-55e7-d10734000000
-Time:2025-05-31T04:47:06.3846735Z</Message><AuthenticationErrorDetail>Signed expiry time [Sat, 31 May 2025 04:43:57 GMT] must be after signed start time [Sat, 31 May 2025 04:47:06 GMT]</AuthenticationErrorDetail></Error> 2025年5月31日 12_47_05.png…]()
+<img width="678" alt="截屏2025-05-31 12 55 28" src="https://github.com/user-attachments/assets/40f4d85b-5054-4451-a06c-861d5bae239c" />
+                        (Elspina, n.d.)
+                        
+---
+
 
 
 In this project, we utilized selected spectral bands from the Sentinel-2 satellite to support optical remote sensing analysis. Specifically, four bands were employed due to their relevance to water and moisture detection:
@@ -64,7 +68,8 @@ In this project, we utilized selected spectral bands from the Sentinel-2 satelli
 ·Band B11 (Short-Wave Infrared 1, 1610 nm): Applied in Modified NDWI (MNDWI) and other spectral water index (SWI) methodologies, providing sensitivity to surface moisture and wetness.
 
 ·Band B05 (Red Edge, 705 nm): Used for constructing SWI-based features within machine learning frameworks, especially for vegetation and moisture-related analyses.
-## Remote Sensing Methods
+
+## Normalized Difference Water Index (NDWI)
 
 
 ```math
@@ -74,6 +79,82 @@ NDWI = \frac{Green - NIR}{Green + NIR}
 
 -- The NDWI, proposed by McFeeters (1996), enhances water features while suppressing non-water elements like vegetation or soil (Xu, 2006). Though widely used for water detection, it performs poorly in urban areas or turbid waters (Xu, 2006; Jiang et al., 2020). In this study, it serves as a baseline for evaluating machine learning-based methods.
 
+## Machine Learning Methodology: K-Means Clustering
+
+K-means clustering is an unsupervised machine learning algorithm widely applied in remote sensing to classify pixels based on spectral similarity—without requiring any labeled data or prior ground truth. In the context of Sentinel-2 imagery, K-means is particularly effective for exploratory analysis, such as water body detection.
+
+<img width="701" alt="截屏2025-05-31 14 46 53" src="https://github.com/user-attachments/assets/6dcd0f3e-08f7-4f9e-8052-4f38ed23bb63" />
+
+--- (Lindsey, 2021)
+
+
+This method partitions the input dataset into K clusters, where each pixel is assigned to the nearest centroid based on Euclidean distance in feature space. The centroids are iteratively updated until the clusters stabilize. The algorithm is especially useful for identifying patterns in multispectral data, where the structure of the data may not be known a priori.
+
+In our workflow, K-means is applied to various spectral indices calculated from Sentinel-2 bands, including:
+
+**·NDWI (B03 + B08)**
+
+**·MNDWI (B03 + B11)**
+
+**·SWI (B05 + B11)**
+
+These indices are stacked to form a 2D feature array, which is then clustered using K-means. Binary water masks from thresholding NDWI/MNDWI are used for comparison, allowing us to evaluate how machine learning can match or improve upon traditional water detection methods.
+
+The key steps include:
+
+**·Loading Sentinel-2 bands**
+
+**·Calculating NDWI/MNDWI**
+
+**·Applying thresholds to generate binary masks**
+
+**·Running K-means on the stacked array**
+
+**·Visualizing and comparing classification outputs**
+
+This integrated approach combines domain-specific index calculation with unsupervised learning, offering a flexible and scalable solution for surface water mapping.
+
+
+## Getting Started
+This project, created using Google Colab, allows you to detect inland water bodies using machine learning (ML) on Sentinel-2 data. To get started, follow these simple steps:
+
+**1.Download the project:**
+Download the ML Detection of Inland Water Bodies.ipynb file from the repository to your local machine or Google Drive.
+
+**2.Acquire datasets:**
+Download the required Sentinel-2 .SAFE bands, and upload them to your Google Drive if using Google Colab.
+If you're working with different datasets, make sure to modify the dataset paths accordingly in the notebook.
+
+**3.Set up your environment:**
+Ensure you are using Python 3.8+ and have the necessary libraries installed:
+rasterio, scikit-learn, numpy, matplotlib, and codecarbon
+Run the necessary cells in the notebook to load the datasets, calculate NDWI/MNDWI values, apply K-means clustering, and visualize the water body classification results.
+
+**4.Run the code:**
+Once your environment is set up, follow the notebook steps sequentially. The project will automatically guide you through water body detection, providing visual outputs like NDWI masks, K-means classifications, and comparison charts.
+This approach combines the use of machine learning for water body detection with Sentinel-2 data, offering a powerful method for analyzing and monitoring surface water globally.
+
+## Datasets Used
+
+The **Sentinel-2 L2A** images were downloaded from the **Copernicus Data Space** website. Only bands B03, B05, B08, and B11 were used. The images were downsampled for memory efficiency.
+
+
+**· Normandy， France (April 2025,Flood season)**
+
+**· Awbari，Libya （April 2025,Dry season）**
+
+# Contact
+
+Chengcheng Zheng - [zcfbczh@ucl.ac.uk](mailto:fiona.mckee.23@ucl.ac.uk) 
+
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+# Acknowledgments
+This project was created for GEOL0069 at University College London, taught by Dr. Michel Tsamados and Weibin Chen.
+
+
 ## Reference
 1.Zeng, F., Song, C., Cao, Z., Xue, K., Lu, S., Tan, C., & Liu, K. (2023). Monitoring inland water via Sentinel satellite constellation: A review and perspective. ISPRS Journal of Photogrammetry and Remote Sensing, 204, 340–361. https://doi.org/10.1016/j.isprsjprs.2023.09.011
 
@@ -82,4 +163,10 @@ NDWI = \frac{Green - NIR}{Green + NIR}
 3.Jiang, W., Ni, Y., Pang, Z., He, G., Fu, J., Lu, J., Yang, K., Long, T., & Lei, T. (2020). A NEW INDEX FOR IDENTIFYING WATER BODY FROM SENTINEL-2 SATELLITE REMOTE SENSING IMAGERY. ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, V-3–2020, 33–38. https://doi.org/10.5194/isprs-annals-v-3-2020-33-2020
 
 4.Phiri, D., Simwanda, M., Salekin, S., Nyirenda, V. R., Murayama, Y., & Ranagalage, M. (2020). Sentinel-2 data for land cover/use mapping: A review. Remote sensing, 12(14), 2291.
-4.Xu, H. (2006). Modification of normalised difference water index (NDWI) to enhance open water features in remotely sensed imagery. International Journal of Remote Sensing, 27(14), 3025–3033. https://doi.org/10.1080/01431160600589179
+
+5.Xu, H. (2006). Modification of normalised difference water index (NDWI) to enhance open water features in remotely sensed imagery. International Journal of Remote Sensing, 27(14), 3025–3033. https://doi.org/10.1080/01431160600589179
+
+6.Lindsey, M. (2021, March 25). K-means clustering: Unveil hidden patterns in data. freeCodeCamp. Retrieved May 31, 2025, from https://www.freecodecamp.org/news/k-means-clustering-unveil-hidden-patterns-in-data/
+
+
+6.Elspina. (n.d.). Sentinel Data Analysis 101. Retrieved May 31, 2025, from https://space.elspina.tech/sentinel-data-analysis-101-5f15bad35d35
