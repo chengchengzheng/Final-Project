@@ -6,7 +6,7 @@
 ![S2A_MSIL2A_20250525T094051_N0511_R036_T33RUN_20250525T120714-ql](https://github.com/user-attachments/assets/e0843433-956b-4e61-ac41-ac8b0eeb2f8b)
 ## Inland Water Detection in Flood-Prone Areas using Sentinel-2 and Unsupervised ML
 
-“A study on NDWI + K-means classification of satellite imagery in Khulna and Mandalay.”
+“A study on NDWI + K-means classification of satellite imagery in Normandy and Awbari.”
 ## About the Project 
 This project was developed as part of the GEOL0069 AI4EO module at University College London. It focuses on applying machine learning to satellite imagery to detect and classify inland water bodies in both flood-prone and dry regions.The study uses freely available Sentinel-2 imagery and explores the performance of three key techniques in different hydrological settings.
 ### Techniques Applied 
