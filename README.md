@@ -79,13 +79,16 @@ NDWI = \frac{Green - NIR}{Green + NIR}
 
 <img width="370" alt="截屏2025-05-31 16 48 45" src="https://github.com/user-attachments/assets/abd085fa-5e88-4ca3-b9c7-c1a9a4f3d557" />
 
+
+
+-- The NDWI, proposed by McFeeters (1996), enhances water features while suppressing non-water elements like vegetation or soil (Xu, 2006). Though widely used for water detection, it performs poorly in urban areas or turbid waters (Xu, 2006; Jiang et al., 2020). In this study, it serves as a baseline for evaluating machine learning-based methods.
+
 ## MNDWI
 ```math
 
 MNDWI = \frac{Green - SWIR1}{Green + SWIR1 + \epsilon}
 ```
-
--- The NDWI, proposed by McFeeters (1996), enhances water features while suppressing non-water elements like vegetation or soil (Xu, 2006). Though widely used for water detection, it performs poorly in urban areas or turbid waters (Xu, 2006; Jiang et al., 2020). In this study, it serves as a baseline for evaluating machine learning-based methods.
+MNDWI (Modified Normalized Difference Water Index) is an effective index used for water body detection and monitoring in remote sensing imagery. It is a modification of the traditional NDWI (Normalized Difference Water Index) and is designed to enhance the detection of water bodies while minimizing interference from land surfaces, such as buildings and vegetation. The index is calculated using the green band and the shortwave infrared (SWIR) band, which allows it to better distinguish water from non-water surfaces. MNDWI is widely used in various applications, including flood monitoring, lake and river changes, and urban water body analysis. Its ability to accurately identify water bodies, even in areas with significant land surface interference, makes it a valuable tool for environmental monitoring and management.
 
 ## Machine Learning Methodology: K-Means Clustering
 
