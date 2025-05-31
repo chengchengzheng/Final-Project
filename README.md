@@ -77,7 +77,7 @@ In this project, we utilized selected spectral bands from the Sentinel-2 satelli
 NDWI = \frac{Green - NIR}{Green + NIR}
 ```
 
-![ChatGPT Image 2025年5月31日 16_15_21](https://github.com/user-attachments/assets/0b14a96e-eaec-49b6-896d-b5225381395b)
+<img width="370" alt="截屏2025-05-31 16 48 45" src="https://github.com/user-attachments/assets/abd085fa-5e88-4ca3-b9c7-c1a9a4f3d557" />
 
 
 
@@ -164,6 +164,7 @@ The environmental footprint of this project is extremely low. For comparison, a 
 No fuel-powered equipment or field surveys were needed. All analysis used freely available Sentinel-2 satellite imagery on a cloud-based platform, ensuring minimal energy consumption. This approach shows how remote sensing and data science can support sustainable research by maintaining scientific quality with minimal environmental impact.
 
 ---
+The low emissions of this project are due to several key factors. First, no physical fieldwork was required, such as flights, car trips, or drone surveys. Second, publicly available satellite data, specifically free Sentinel-2 imagery provided by the European Space Agency, was used. Additionally, the project was run on the shared cloud infrastructure of Google Colab, utilizing shared GPUs and CPUs. The code was also optimized, with raster data files downsampled before processing, significantly reducing RAM and CPU load. Finally, the K-means clustering algorithm used is unsupervised and computationally light, eliminating the need for complex model training.
 
 # Contact
 
