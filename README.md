@@ -1,4 +1,4 @@
-# Final-Project
+![ChatGPT Image 2025年5月31日 12_47_05](https://github.com/user-attachments/assets/fcc1dec2-6dfa-4d9e-926e-dbc4075a2dd5)# Final-Project
 ## Inland Water Body Detection with ML
 ### Normandy(flooded) vs Awbari(dray)
 ![S2B_MSIL2A_20250429T104619_N0511_R051_T31UET_20250429T130440-ql](https://github.com/user-attachments/assets/5c59e03f-83dd-4e65-a46a-10b090cfcc4f)
@@ -48,6 +48,13 @@ By combining visual interpretation with quantitative evaluation, the project pro
 
 ##  The SENTINEL-2 Satellite
 
+Sentinel-2 data have a positive impact on land cover/use monitoring, especially in terms of crops, forests, urban areas and water resources. When combined with other remote sensing data, the accuracy rate is very high. 80%(Phiri et al., 2020).
+
+![Uploading ChatGPT Image<?xml version="1.0" encoding="utf-8"?><Error><Code>AuthenticationFailed</Code><Message>Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
+RequestId:60a40ac0-f01e-0043-55e7-d10734000000
+Time:2025-05-31T04:47:06.3846735Z</Message><AuthenticationErrorDetail>Signed expiry time [Sat, 31 May 2025 04:43:57 GMT] must be after signed start time [Sat, 31 May 2025 04:47:06 GMT]</AuthenticationErrorDetail></Error> 2025年5月31日 12_47_05.png…]()
+
+
 In this project, we utilized selected spectral bands from the Sentinel-2 satellite to support optical remote sensing analysis. Specifically, four bands were employed due to their relevance to water and moisture detection:
 
 ·Band B03 (Green, 560 nm): Utilized for water body detection through the Normalized Difference Water Index (NDWI), which enhances the distinction between water features and surrounding land.
@@ -74,4 +81,5 @@ NDWI = \frac{Green - NIR}{Green + NIR}
 
 3.Jiang, W., Ni, Y., Pang, Z., He, G., Fu, J., Lu, J., Yang, K., Long, T., & Lei, T. (2020). A NEW INDEX FOR IDENTIFYING WATER BODY FROM SENTINEL-2 SATELLITE REMOTE SENSING IMAGERY. ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, V-3–2020, 33–38. https://doi.org/10.5194/isprs-annals-v-3-2020-33-2020
 
+4.Phiri, D., Simwanda, M., Salekin, S., Nyirenda, V. R., Murayama, Y., & Ranagalage, M. (2020). Sentinel-2 data for land cover/use mapping: A review. Remote sensing, 12(14), 2291.
 4.Xu, H. (2006). Modification of normalised difference water index (NDWI) to enhance open water features in remotely sensed imagery. International Journal of Remote Sensing, 27(14), 3025–3033. https://doi.org/10.1080/01431160600589179
