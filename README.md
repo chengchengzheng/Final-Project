@@ -1,13 +1,13 @@
 
 # Final-Project
-## Inland Water Body Detection with ML
+## 1.Inland Water Body Detection with ML
 ### Normandy(flooded) vs Awbari(dray)
 ![S2B_MSIL2A_20250429T104619_N0511_R051_T31UET_20250429T130440-ql](https://github.com/user-attachments/assets/5c59e03f-83dd-4e65-a46a-10b090cfcc4f)
 ![S2A_MSIL2A_20250525T094051_N0511_R036_T33RUN_20250525T120714-ql](https://github.com/user-attachments/assets/e0843433-956b-4e61-ac41-ac8b0eeb2f8b)
-## Inland Water Detection in Flood-Prone Areas using Sentinel-2 and Unsupervised ML
+## 2.Inland Water Detection in Flood-Prone Areas using Sentinel-2 and Unsupervised ML
 
 “A study on NDWI + K-means classification of satellite imagery in Normandy and Awbari.”
-## About the Project 
+## 3.About the Project 
 This project was developed as part of the GEOL0069 AI4EO module at University College London. It focuses on applying machine learning to satellite imagery to detect and classify inland water bodies in both flood-prone and dry regions.The study uses freely available Sentinel-2 imagery and explores the performance of three key techniques in different hydrological settings.
 ### Techniques Applied 
 ·NDWI (Normalized Difference Water Index)
@@ -15,7 +15,7 @@ This project was developed as part of the GEOL0069 AI4EO module at University Co
 ·MNDWI (Modified NDWI using Green & SWIR bands)
 
 ·K-means clustering (unsupervised learning algorithm)
-### 🌍 Study Areas
+### 4.🌍 Study Areas
 ·Normandy Estuary, France
 
 A coastal deltaic zone located in western Normandy, characterized by dense river networks, tidal inlets, and dynamic hydrology. This region is prone to seasonal flooding due to both river overflow and tidal influence, making it an ideal candidate for assessing flood detection techniques.
@@ -28,13 +28,13 @@ A hyper-arid inland area near the town of Awbari in the Libyan Sahara. This regi
 
 Additionally, the project uses the CodeCarbon tool to estimate emissions from computation, highlighting the environmental efficiency of the approach.
 
-## Background
+## 5.Background
 
 Inland water bodies, such as lakes, rivers, and reservoirs, are vital to ecosystems, agriculture, and human livelihoods. However, they are increasingly impacted by climate change and human activities, making accurate and timely monitoring essential (Zeng et al., 2023).
 
 Remote sensing provides an efficient, scalable, and cost-effective approach for surface water detection. This project builds on existing research by applying Sentinel-2 satellite data and machine learning techniques to enhance the identification of inland water bodies.
 
-## Description of the Problem
+## 6.Description of the Problem
 Problem Overview
 
 Flooding is one of the most widespread and destructive natural hazards, posing significant threats to human lives, infrastructure, and economies. Rapid and accurate flood detection is crucial for disaster response, risk management, and long-term resilience planning.
@@ -48,7 +48,7 @@ Whether K-means clustering can enhance or complement traditional water indices
 How different spectral band combinations perform under complex conditions such as urban shading or high sediment levels
 By combining visual interpretation with quantitative evaluation, the project proposes a lightweight and adaptable framework for flood mapping, particularly suited for regions with limited data or infrastructure.
 
-##  The SENTINEL-2 Satellite
+## 7. The SENTINEL-2 Satellite
 
 Sentinel-2 data have a positive impact on land cover/use monitoring, especially in terms of crops, forests, urban areas and water resources. When combined with other remote sensing data, the accuracy rate is very high. 80%(Phiri et al., 2020).
 
@@ -69,7 +69,7 @@ In this project, we utilized selected spectral bands from the Sentinel-2 satelli
 
 ·Band B05 (Red Edge, 705 nm): Used for constructing SWI-based features within machine learning frameworks, especially for vegetation and moisture-related analyses.
 
-## Normalized Difference Water Index (NDWI)
+## 8.Normalized Difference Water Index (NDWI)
 
 
 ```math
@@ -83,14 +83,14 @@ NDWI = \frac{Green - NIR}{Green + NIR}
 
 -- The NDWI, proposed by McFeeters (1996), enhances water features while suppressing non-water elements like vegetation or soil (Xu, 2006). Though widely used for water detection, it performs poorly in urban areas or turbid waters (Xu, 2006; Jiang et al., 2020). In this study, it serves as a baseline for evaluating machine learning-based methods.
 
-## MNDWI
+## 9.MNDWI
 ```math
 
 MNDWI = \frac{Green - SWIR1}{Green + SWIR1 + \epsilon}
 ```
 MNDWI (Modified Normalized Difference Water Index) is an effective index used for water body detection and monitoring in remote sensing imagery. It is a modification of the traditional NDWI (Normalized Difference Water Index) and is designed to enhance the detection of water bodies while minimizing interference from land surfaces, such as buildings and vegetation. The index is calculated using the green band and the shortwave infrared (SWIR) band, which allows it to better distinguish water from non-water surfaces. MNDWI is widely used in various applications, including flood monitoring, lake and river changes, and urban water body analysis. Its ability to accurately identify water bodies, even in areas with significant land surface interference, makes it a valuable tool for environmental monitoring and management.
 
-## Machine Learning Methodology: K-Means Clustering
+## 10.Machine Learning Methodology: K-Means Clustering
 
 K-means clustering is an unsupervised machine learning algorithm widely applied in remote sensing to classify pixels based on spectral similarity—without requiring any labeled data or prior ground truth. In the context of Sentinel-2 imagery, K-means is particularly effective for exploratory analysis, such as water body detection.
 
@@ -126,7 +126,7 @@ The key steps include:
 This integrated approach combines domain-specific index calculation with unsupervised learning, offering a flexible and scalable solution for surface water mapping.
 
 
-## Getting Started
+## 11.Getting Started
 This project, created using Google Colab, allows you to detect inland water bodies using machine learning (ML) on Sentinel-2 data. To get started, follow these simple steps:
 
 **1.Download the project:**
@@ -145,7 +145,7 @@ Run the necessary cells in the notebook to load the datasets, calculate NDWI/MND
 Once your environment is set up, follow the notebook steps sequentially. The project will automatically guide you through water body detection, providing visual outputs like NDWI masks, K-means classifications, and comparison charts.
 This approach combines the use of machine learning for water body detection with Sentinel-2 data, offering a powerful method for analyzing and monitoring surface water globally.
 
-## Datasets Used
+## 12.Datasets Used
 
 The **Sentinel-2 L2A** images were downloaded from the **Copernicus Data Space** website. Only bands B03, B05, B08, and B11 were used. The images were downsampled for memory efficiency.
 
@@ -158,7 +158,7 @@ The **Sentinel-2 L2A** images were downloaded from the **Copernicus Data Space**
 
 This project emphasizes **sustainable AI practices** by using an energy-efficient, cloud-based workflow. The flood detection process was executed with minimal computational resources—without GPU acceleration or local infrastructure—using CPU-based operations on **Google Colab**, which leverages shared resources.
 
-##  Carbon Emissions Measured with codecarbon
+## 13。 Carbon Emissions Measured with codecarbon
 
 The codecarbon package was used to estimate emissions during two key processing sessions:
 1. **Normandy** – a flood-prone deltaic region  ：  0.000103 kg CO₂
@@ -173,7 +173,7 @@ No fuel-powered equipment or field surveys were needed. All analysis used freely
 ---
 The low emissions of this project are due to several key factors. First, no physical fieldwork was required, such as flights, car trips, or drone surveys. Second, publicly available satellite data, specifically free Sentinel-2 imagery provided by the European Space Agency, was used. Additionally, the project was run on the shared cloud infrastructure of Google Colab, utilizing shared GPUs and CPUs. The code was also optimized, with raster data files downsampled before processing, significantly reducing RAM and CPU load. Finally, the K-means clustering algorithm used is unsupervised and computationally light, eliminating the need for complex model training.
 
-## conclusion
+## 14.conclusion
 This project showcases how low-carbon AI can be applied in environmental research, using open data and shared computing to significantly reduce carbon emissions.  By relying on free Sentinel-2 imagery and running the process on Google Colab’s shared GPUs/CPUs, we avoid the need for physical fieldwork, like flights or car trips, and minimize the use of high-power servers.  The code is optimized by downsampling raster data to save on memory and reduce computational load.  Additionally, K-means clustering, a lightweight, unsupervised algorithm, eliminates the need for resource-heavy model training.  Unlike traditional workflows that require extensive resources, this approach enables reproducibility with minimal environmental impact, making it scalable to other regions without added cost or emissions.  Ultimately, this demonstrates how cloud tools and efficient algorithms can reduce the environmental footprint of Earth observation, while promoting responsible AI practices in the geospatial domain.
 
 # Contact
