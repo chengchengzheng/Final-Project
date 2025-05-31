@@ -154,11 +154,11 @@ The **Sentinel-2 L2A** images were downloaded from the **Copernicus Data Space**
 
 **· Awbari，Libya （April 2025,Dry season）**
 
-# Environmental Cost of the Project
+# 13.Environmental Cost of the Project
 
 This project emphasizes **sustainable AI practices** by using an energy-efficient, cloud-based workflow. The flood detection process was executed with minimal computational resources—without GPU acceleration or local infrastructure—using CPU-based operations on **Google Colab**, which leverages shared resources.
 
-## 13。 Carbon Emissions Measured with codecarbon
+## 14. Carbon Emissions Measured with codecarbon
 
 The codecarbon package was used to estimate emissions during two key processing sessions:
 1. **Normandy** – a flood-prone deltaic region  ：  0.000103 kg CO₂
@@ -173,7 +173,7 @@ No fuel-powered equipment or field surveys were needed. All analysis used freely
 ---
 The low emissions of this project are due to several key factors. First, no physical fieldwork was required, such as flights, car trips, or drone surveys. Second, publicly available satellite data, specifically free Sentinel-2 imagery provided by the European Space Agency, was used. Additionally, the project was run on the shared cloud infrastructure of Google Colab, utilizing shared GPUs and CPUs. The code was also optimized, with raster data files downsampled before processing, significantly reducing RAM and CPU load. Finally, the K-means clustering algorithm used is unsupervised and computationally light, eliminating the need for complex model training.
 
-## 14.conclusion
+## 15.conclusion
 This project showcases how low-carbon AI can be applied in environmental research, using open data and shared computing to significantly reduce carbon emissions.  By relying on free Sentinel-2 imagery and running the process on Google Colab’s shared GPUs/CPUs, we avoid the need for physical fieldwork, like flights or car trips, and minimize the use of high-power servers.  The code is optimized by downsampling raster data to save on memory and reduce computational load.  Additionally, K-means clustering, a lightweight, unsupervised algorithm, eliminates the need for resource-heavy model training.  Unlike traditional workflows that require extensive resources, this approach enables reproducibility with minimal environmental impact, making it scalable to other regions without added cost or emissions.  Ultimately, this demonstrates how cloud tools and efficient algorithms can reduce the environmental footprint of Earth observation, while promoting responsible AI practices in the geospatial domain.
 
 # Contact
