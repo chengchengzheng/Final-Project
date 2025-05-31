@@ -77,6 +77,10 @@ In this project, we utilized selected spectral bands from the Sentinel-2 satelli
 NDWI = \frac{Green - NIR}{Green + NIR}
 ```
 
+![ChatGPT Image 2025年5月31日 16_15_21](https://github.com/user-attachments/assets/0b14a96e-eaec-49b6-896d-b5225381395b)
+
+
+
 -- The NDWI, proposed by McFeeters (1996), enhances water features while suppressing non-water elements like vegetation or soil (Xu, 2006). Though widely used for water detection, it performs poorly in urban areas or turbid waters (Xu, 2006; Jiang et al., 2020). In this study, it serves as a baseline for evaluating machine learning-based methods.
 
 ## Machine Learning Methodology: K-Means Clustering
@@ -142,6 +146,24 @@ The **Sentinel-2 L2A** images were downloaded from the **Copernicus Data Space**
 **· Normandy， France (April 2025,Flood season)**
 
 **· Awbari，Libya （April 2025,Dry season）**
+
+# Environmental Cost of the Project
+
+This project emphasizes **sustainable AI practices** by using an energy-efficient, cloud-based workflow. The flood detection process was executed with minimal computational resources—without GPU acceleration or local infrastructure—using CPU-based operations on **Google Colab**, which leverages shared resources.
+
+##  Carbon Emissions Measured with codecarbon
+
+The codecarbon package was used to estimate emissions during two key processing sessions:
+1. **Normandy** – a flood-prone deltaic region  ：  0.000103 kg CO₂
+2. **Awbari** – used as a dry season control region ：0.000921 kg CO₂
+
+> **Environmental Impact Assessment**
+
+The environmental footprint of this project is extremely low. For comparison, a typical two-hour car trip emits 0.5 kg of CO₂, while the entire computational process here produced only 0.001024 kg of CO₂ — less than 1/400th of a car journey.
+
+No fuel-powered equipment or field surveys were needed. All analysis used freely available Sentinel-2 satellite imagery on a cloud-based platform, ensuring minimal energy consumption. This approach shows how remote sensing and data science can support sustainable research by maintaining scientific quality with minimal environmental impact.
+
+---
 
 # Contact
 
