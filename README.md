@@ -166,6 +166,9 @@ No fuel-powered equipment or field surveys were needed. All analysis used freely
 ---
 The low emissions of this project are due to several key factors. First, no physical fieldwork was required, such as flights, car trips, or drone surveys. Second, publicly available satellite data, specifically free Sentinel-2 imagery provided by the European Space Agency, was used. Additionally, the project was run on the shared cloud infrastructure of Google Colab, utilizing shared GPUs and CPUs. The code was also optimized, with raster data files downsampled before processing, significantly reducing RAM and CPU load. Finally, the K-means clustering algorithm used is unsupervised and computationally light, eliminating the need for complex model training.
 
+## conclusion
+This project showcases how low-carbon AI can be applied in environmental research, using open data and shared computing to significantly reduce carbon emissions.  By relying on free Sentinel-2 imagery and running the process on Google Colab’s shared GPUs/CPUs, we avoid the need for physical fieldwork, like flights or car trips, and minimize the use of high-power servers.  The code is optimized by downsampling raster data to save on memory and reduce computational load.  Additionally, K-means clustering, a lightweight, unsupervised algorithm, eliminates the need for resource-heavy model training.  Unlike traditional workflows that require extensive resources, this approach enables reproducibility with minimal environmental impact, making it scalable to other regions without added cost or emissions.  Ultimately, this demonstrates how cloud tools and efficient algorithms can reduce the environmental footprint of Earth observation, while promoting responsible AI practices in the geospatial domain.
+
 # Contact
 
 Chengcheng Zheng - [zcfbczh@ucl.ac.uk](mailto:fiona.mckee.23@ucl.ac.uk) 
