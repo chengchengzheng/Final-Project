@@ -79,7 +79,11 @@ NDWI = \frac{Green - NIR}{Green + NIR}
 
 <img width="370" alt="截屏2025-05-31 16 48 45" src="https://github.com/user-attachments/assets/abd085fa-5e88-4ca3-b9c7-c1a9a4f3d557" />
 
+## MNDWI
+```math
 
+MNDWI = \frac{Green - SWIR1}{Green + SWIR1 + \epsilon}
+```
 
 -- The NDWI, proposed by McFeeters (1996), enhances water features while suppressing non-water elements like vegetation or soil (Xu, 2006). Though widely used for water detection, it performs poorly in urban areas or turbid waters (Xu, 2006; Jiang et al., 2020). In this study, it serves as a baseline for evaluating machine learning-based methods.
 
