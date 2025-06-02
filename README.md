@@ -154,9 +154,34 @@ The **Sentinel-2 L2A** images were downloaded from the **Copernicus Data Space**
 
 **· Awbari，Libya （April 2025,Dry season）**
 
-# 13.Environmental Cost of the Project
+# ！13.Environmental Cost of the Project
 
-This project emphasizes **sustainable AI practices** by using an energy-efficient, cloud-based workflow. The flood detection process was executed with minimal computational resources—without GPU acceleration or local infrastructure—using CPU-based operations on **Google Colab**, which leverages shared resources.
+This project was conducted using the Google Colab platform, focusing on the detection of flood-affected areas through the analysis of Sentinel-2 satellite imagery. The workflow included calculating the Normalized Difference Water Index (NDWI) and applying K-Means clustering to classify flooded and non-flooded regions. Below is an overview of the estimated environmental cost:
+
+1. Computational Resources
+
+Platform: Google Colab (standard CPU environment)
+Number of runs: Approximately 20
+Average run time per session: ~5 minutes
+Estimated total run time: Less than 2 hours
+Approximate energy consumption: 0.05–0.1 kWh
+(Based on general estimates for CPU-based Python computations)
+
+2. Data Usage
+
+The analysis was based on a small number of Sentinel-2 images (2–3 scenes)
+All images were cropped to regional areas to minimize processing load
+No deep learning models or GPU-intensive training was involved
+
+3. Energy Efficiency Measures
+
+All experiments were run on CPU to reduce energy usage
+Data processing was streamlined with minimal computation overhead
+Cloud computing infrastructure (Colab) was used instead of local high-power hardware
+
+4. Conclusion
+
+This project was designed with sustainability in mind by adopting a lightweight, cloud-based computing workflow. The entire flood detection pipeline was executed without the use of GPU acceleration or any large-scale model training. Instead, all geospatial analysis and classification tasks were performed using basic CPU operations on Google Colab—a platform that allows shared access to cloud computing resources. As a result, the environmental footprint of this project remained minimal, making it an efficient and eco-conscious approach to remote sensing research.
 
 ## 14. Carbon Emissions Measured with codecarbon
 
