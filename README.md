@@ -54,6 +54,11 @@ Sentinel-2 data have a positive impact on land cover/use monitoring, especially 
 
 <img width="678" alt="截屏2025-05-31 12 55 28" src="https://github.com/user-attachments/assets/40f4d85b-5054-4451-a06c-861d5bae239c" />
                         (Elspina, n.d.)
+
+The satellite imagery used in this project was acquired via the Sentinel-2 MultiSpectral Instrument (MSI), which captures data across 13 spectral bands. Specifically, Bands 3 (Green) and 8 (NIR) were utilized to compute the Normalized Difference Water Index (NDWI) for surface water detection.
+
+![ChatGPT Image 2025年6月3日 00_30_25](https://github.com/user-attachments/assets/ca1dcf1f-dd8f-4212-a010-c285ca05c5ab)
+
                         
 ---
 
@@ -77,8 +82,8 @@ In this project, we utilized selected spectral bands from the Sentinel-2 satelli
 NDWI = \frac{Green - NIR}{Green + NIR}
 ```
 
-<img width="370" alt="截屏2025-05-31 16 48 45" src="https://github.com/user-attachments/assets/abd085fa-5e88-4ca3-b9c7-c1a9a4f3d557" />
 
+![52f24ffc-dd6a-4325-bd43-4785cc17c177](https://github.com/user-attachments/assets/40d38452-9254-4161-9acd-1c64f4e28362)
 
 
 -- The NDWI, proposed by McFeeters (1996), enhances water features while suppressing non-water elements like vegetation or soil (Xu, 2006). Though widely used for water detection, it performs poorly in urban areas or turbid waters (Xu, 2006; Jiang et al., 2020). In this study, it serves as a baseline for evaluating machine learning-based methods.
@@ -93,6 +98,9 @@ MNDWI (Modified Normalized Difference Water Index) is an effective index used fo
 ## 10.Machine Learning Methodology: K-Means Clustering
 
 K-means clustering is an unsupervised machine learning algorithm widely applied in remote sensing to classify pixels based on spectral similarity—without requiring any labeled data or prior ground truth. In the context of Sentinel-2 imagery, K-means is particularly effective for exploratory analysis, such as water body detection.
+
+![WechatIMG1885](https://github.com/user-attachments/assets/820194ff-2270-4ff1-b7b5-6d8711a35af3)
+
 
 <img width="701" alt="截屏2025-05-31 14 46 53" src="https://github.com/user-attachments/assets/6dcd0f3e-08f7-4f9e-8052-4f38ed23bb63" />
 
